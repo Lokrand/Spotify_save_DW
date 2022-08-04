@@ -1,7 +1,7 @@
 import ReactDOM from "react-dom/client";
 import React from "react";
 import {
-    BrowserRouter,
+    HashRouter ,
     Routes,
     Route,
     useNavigate,
@@ -10,20 +10,20 @@ import {
 
 import App from "./app";
 import UserApp from "./userApp";
+import { AboutPage } from "./pages/AboutPage";
+
 
 // App
 const appDiv = document.getElementById("app");
 let root
-if (appDiv.className == 'mainApp'){
+if (appDiv?.className === 'mainApp'){
     root = ReactDOM.createRoot(appDiv);
     root.render(
-        <BrowserRouter>
-            <Routes>
-                <Route path="/" element={<App />}></Route>
-            </Routes>
-        </BrowserRouter>
+        <HashRouter >
+            <App />
+        </HashRouter >
     )
-} else if (appDiv.className = 'userApp') {
+} else if (appDiv?.className === 'userApp') {
     root = ReactDOM.createRoot(appDiv);
     root.render(<UserApp />)
 }

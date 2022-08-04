@@ -131,13 +131,13 @@ export const UserApp = () => {
                             style={ButtonStyle}
                             title="Help"
                             link="/help"
-                            color="bg-white text-black"
+                            color="bg-black text-black"
                         />
                     <Button
                             style={ButtonStyle}
                             title="Home"
                             link="/"
-                            color="bg-white text-black"
+                            color="bg-black text-black"
                         />
                     <LogoutButton
                         ButtonStyle={"ml-12 "}

@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "webpack --mode development --watch",
     "tw": "tailwindcss -i ./src/input.css -o ./static/css/twstyles.css --watch",
-    "buld": "webpack --mode production"
+    "build": "webpack --mode production"
   },
   "keywords": [],
   "author": "",

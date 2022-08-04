@@ -16,12 +16,14 @@
                 "fastapi run",
                 "tailwind run",
                 "webpack run dev"
-            ]
+            ],
+            "problemMatcher": []
         },
         {
             "label": "fastapi run",
             "type": "shell",
-            "command": "C:/Users/akorz/AppData/Local/pypoetry/Cache/virtualenvs/spotify-dw-api-xfJ6mADH-py3.9/Scripts/python.exe c:/Users/akorz/Documents/Spotify_DW_API/src/main.py"
+            "command": "C:\\Users\\uchih\\AppData\\Local\\pypoetry\\Cache\\virtualenvs\\spotify-dw-api-jwfVwDbV-py3.10\\Scripts\\python.exe C:/Users/uchih/Documents/spotify/Spotify_save_DW/src/main.py",
+            "problemMatcher": []
         },
         {
             "label": "tailwind run",

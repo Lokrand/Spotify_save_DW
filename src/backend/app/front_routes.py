@@ -68,6 +68,10 @@ async def login_url():
 async def login_redirect(region: str, ):    
     return RedirectResponse('/login')
 
+@router.get("/help", )
+async def help_redirect():    
+    return RedirectResponse('/')
+
 # move to api
 @router.get("/get_token", )
 async def get_tocken(code: str, ) -> RedirectResponse:   
