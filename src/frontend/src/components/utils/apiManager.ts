@@ -76,7 +76,7 @@ export const getUserData = async (cookie: SpotifyCoockie) => {
         const data = await res.json()
         return {
             name: data.display_name,
-            img: data.images[0].url,
+            img: data.images[0] ? data.images[0].url : "https://w-dog.ru/wallpapers/6/1/357873493962558/kot-ryzhij-zevaet-imbir.jpg",
             followers: data.followers.total,
             id: data.id
         }
@@ -133,7 +133,7 @@ const getPlaylistSongs = async (
         }
     });
     const data = await res.json()
-    const songs = []
+    const songs:Song[] = []
     data.tracks.items.forEach((song) => {
         songs.push({
             name: song.track.name,
@@ -156,7 +156,7 @@ export const getPlayBackSongs = async (cookie: SpotifyCoockie): Promise<[Song[],
         id: data.item.uri,
     }
     const playlistUri = isPlaybackPlaylist(data)
-    let songs = []
+    let songs:Song[] = []
     let plInfo
     if (playlistUri) {
         return await getPlaylistSongs(playlistUri.toString(), cookie, currentSong)
@@ -182,7 +182,7 @@ export const saveUserPl = async (cookie: SpotifyCoockie, songs,) => {
     // Create new playlist
     const userData = await getUserData(cookie)
     const PlData = generatePlData()
-    const res = await fetch(`https://api.spotify.com/v1/users/${userData.id}/playlists`, {
+    const res = await fetch(`https://api.spotify.com/v1/users/${userData?.id}/playlists`, {
         method: 'POST',
         headers: {
             'Accept': 'application/json',
